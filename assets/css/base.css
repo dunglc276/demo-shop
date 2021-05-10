@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #ff6333;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: rgba(0,0,0,.14);
+
+    --navbar-height: 34px;
+    --header-height: 120px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+    visibility: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    --growth-from: 0.6;
+    --growth-to: 1;
+    min-width: 300px;
+    min-height: 300px;
+    margin: auto;
+    background-color: var(--white-color);
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.2s;
+}
+
+@keyframes growth {
+    from {
+        transform: scale(--growth-from);
+    }
+    to {
+        transform: scale(--growth-to);
+    }
+}
+
+/* Button style */
+.btn {
+    min-width: 120px;
+    min-height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled {
+    cursor: default;
+}
+
+
+
